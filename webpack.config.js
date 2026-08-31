@@ -51,7 +51,7 @@ module.exports = (env, options) => {
             from: "manifest.xml",
             to: "manifest.xml",
             transform(content) {
-              return dev ? content.toString().replace(new RegExp(urlProd, "g"), urlDev) : content;
+              return dev ? content.toString().split(urlProd).join(urlDev) : content;
             },
           },
         ],
