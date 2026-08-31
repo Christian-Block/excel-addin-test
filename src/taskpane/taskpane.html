@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Excel Add-in Demo</title>
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <link rel="stylesheet" href="taskpane.css" />
+  </head>
+
+  <body>
+    <main id="app" class="hidden">
+      <h1>Excel add-in demo</h1>
+
+      <p id="status" role="status" data-testid="status">Ready.</p>
+
+      <section aria-labelledby="account-title">
+        <h2 id="account-title">Account</h2>
+        <p id="account-state" data-testid="account-state">Not signed in.</p>
+        <button id="sign-in" type="button" data-testid="sign-in">Sign in</button>
+        <button id="sign-out" type="button" data-testid="sign-out">Sign out</button>
+      </section>
+
+      <section aria-labelledby="free-title">
+        <h2 id="free-title">Free features</h2>
+        <button id="create-table" type="button" data-testid="create-table">Create demo table</button>
+
+        <div class="field">
+          <label for="cell-address">Cell</label>
+          <input id="cell-address" data-testid="cell-address" type="text" value="A2" />
+        </div>
+        <div class="field">
+          <label for="cell-value">Value</label>
+          <input id="cell-value" data-testid="cell-value" type="text" />
+        </div>
+        <button id="read-cell" type="button" data-testid="read-cell">Read cell</button>
+        <button id="write-cell" type="button" data-testid="write-cell">Write cell</button>
+
+        <button id="validate" type="button" data-testid="validate">Validate values</button>
+        <ul id="validation-issues" data-testid="validation-issues"></ul>
+
+        <button id="row-format" type="button" data-testid="row-format">Highlight rows</button>
+        <button id="export-json" type="button" data-testid="export-json">Download JSON</button>
+      </section>
+
+      <section aria-labelledby="premium-title">
+        <h2 id="premium-title">Features for signed in users</h2>
+        <button id="column-format" type="button" data-testid="column-format" disabled>Colour scale for column</button>
+
+        <div class="field">
+          <label for="import-file">JSON file</label>
+          <input id="import-file" data-testid="import-file" type="file" accept="application/json" disabled />
+        </div>
+
+        <div class="field">
+          <label for="display-name">Display name</label>
+          <input id="display-name" data-testid="display-name" type="text" disabled />
+        </div>
+        <div class="field">
+          <label for="quantity-threshold">Quantity threshold</label>
+          <input id="quantity-threshold" data-testid="quantity-threshold" type="number" min="0" value="50" disabled />
+        </div>
+        <button id="save-settings" type="button" data-testid="save-settings" disabled>Save settings</button>
+      </section>
+
+      <section aria-labelledby="functions-title">
+        <h2 id="functions-title">Custom functions</h2>
+        <p>
+          Use <code>=REPLACE("DE")</code> to replace a key with the matching value of the built in list, or
+          <code>=LOADMAP("https://example.com/map.json")</code> to load the list from a REST endpoint.
+        </p>
+        <p id="map-size" data-testid="map-size"></p>
+      </section>
+    </main>
+  </body>
+</html>
