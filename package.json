@@ -8,9 +8,10 @@
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "start": "webpack serve --mode development",
-    "lint": "eslint \"src/**/*.ts\" \"test/**/*.ts\"",
+    "lint": "eslint \"src/**/*.ts\" \"test/**/*.ts\" \"e2e/**/*.ts\"",
     "test": "jest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "core-js": "^3.38.1"
